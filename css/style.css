@@ -239,7 +239,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 footer  {   
-  background:#1e425e; width:100%; padding:50px 150px; box-sizing:border-box; color:#fff;}
+  background:#407056; width:100%; padding:50px 150px; box-sizing:border-box; color:#fff;}
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -3243,7 +3243,7 @@ select.input-border {
 	padding:38px 3px 5px 3px;
 	margin: 0 12px 17px 12px;
 	border-bottom: 2px solid rgba(45,78,83,0);
-	color:#407056;
+	color:#ffffff;
   letter-spacing:2px;
   background-color: transparent;
 }
@@ -3735,7 +3735,7 @@ background:none;
 	top:0;
 	left:0;
 	z-index:100;
-	background: #fff;
+	background: rgba(64,112,86,.9);
 	-webkit-transition: height .3s ease 0s, background .3s ease 0s;
 	-o-transition: height .3s ease 0s, background .3s ease 0s;
 	transition: height .3s ease 0s, background .3s ease 0s; 
@@ -4530,6 +4530,7 @@ blockquote.custom-blockquote:before {
 #sidebar-stiky.affix{
 	position:fixed;
 	top:70px;
+  background-color: #407056;
 }
 .blog-categories {
 	margin:0;
