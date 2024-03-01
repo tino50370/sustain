@@ -18,24 +18,24 @@ if (array_key_exists('email', $_POST)) {
     //Tell PHPMailer to use SMTP - requires a local mail server
     //Faster and safer than using mail()
 
-    //$mail->isSMTP();                              // Tell PHPMailer to use SMTP
+    $mail->isSMTP();                              // Tell PHPMailer to use SMTP
     
-    //$mail->Host = 'mail.yourserver.com';				  // Specify main and backup server
-    //$mail->SMTPAuth = true;                       // Enable SMTP authentication
-    //$mail->Username = 'username';             	  // SMTP username
-    //$mail->Password = 'secret';                   // SMTP password
-    //$mail->SMTPSecure = 'tls';                    // Enable encryption, 'ssl' also accepted
-    //$mail->Port = 25;                             // Set the SMTP port number - likely to be 25, 465 or 587
+    $mail->Host = 'smtp.hostinger.com';				  // Specify main and backup server
+    $mail->SMTPAuth = true;                       // Enable SMTP authentication
+    $mail->Username = 'contactus@sustainsphere.org';             	  // SMTP username
+    $mail->Password = 'Contactus123()*';                   // SMTP password
+    $mail->SMTPSecure = 'ssl';                    // Enable encryption, 'ssl' also accepted
+    $mail->Port = 465;                             // Set the SMTP port number - likely to be 25, 465 or 587
 
     //Use a fixed address in your own domain as the from address
     //**DO NOT** use the submitter's address here as it will be forgery
     //and will cause your messages to fail SPF checks
     
-    $mail->setFrom('email@your-website.com', 'your-website.com'); //**Write here sender email. For example, emails will be sent to you from your website, so write email of your website (if you don't have it, write any email, which you want) and the name of your website. Example ('email@your-website.com', 'your-website.com')) Send from a fixed, valid address in your own domain, perhaps one that allows you to easily identify that it originated on your contact form**
+    $mail->setFrom('contactus@sustainsphere.org', 'sustainsphere.org'); //**Write here sender email. For example, emails will be sent to you from your website, so write email of your website (if you don't have it, write any email, which you want) and the name of your website. Example ('email@your-website.com', 'your-website.com')) Send from a fixed, valid address in your own domain, perhaps one that allows you to easily identify that it originated on your contact form**
     
     //Send the message to yourself, or whoever should receive contact for submissions
     
-    $mail->addAddress('artrevodev@gmail.com'); //**WRITE HERE RECIPIENT EMAIL ADDRESS (AT THIS ADDRESS EMAILS WILL BE COME)**
+    $mail->addAddress('info@sustainsphere.org'); //**WRITE HERE RECIPIENT EMAIL ADDRESS (AT THIS ADDRESS EMAILS WILL BE COME)**
     
     //Put the submitter's address in a reply-to header
     //This will fail if the address provided is invalid,
@@ -50,6 +50,8 @@ if (array_key_exists('email', $_POST)) {
         $mail->Body = <<<EOT
 Email: {$_POST['email']}
 Name: {$_POST['name']}
+Company: {$_POST['company']}
+Position: {$_POST['position']}
 Message: {$_POST['message']}
 EOT;
     //Send the message, check for errors
